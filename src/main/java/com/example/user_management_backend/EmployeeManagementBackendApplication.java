@@ -8,10 +8,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class UserManagementBackendApplication implements CommandLineRunner {
+public class EmployeeManagementBackendApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UserManagementBackendApplication.class, args);
+		SpringApplication.run(EmployeeManagementBackendApplication.class, args);
 	}
 
 	@Autowired
@@ -19,10 +19,10 @@ public class UserManagementBackendApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Employee employee = new Employee();
-		employee.setFirstName("Kamal");
-		employee.setLastName("Perera");
-		employee.setEmailId("kamal@gmail.com");
-		employeeRepository.save(employee);
+//		Employee employee = new Employee();
+//		employee.setFirstName("Kamal");
+//		employee.setLastName("Perera");
+//		employee.setEmailId("kamal@gmail.com");
+//		employeeRepository.save(employee);
 	}
 }
