@@ -26,4 +26,10 @@ public class Employee {
 
     @Column(name = "email_id")
     private String emailId;
+
+    @Column(name = "age")
+    private String age;
+
+    @Column(name = "phoneNo")
+    private String phoneNo;
 }
