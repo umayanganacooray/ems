@@ -1,0 +1,144 @@
+  openapi: 3.0.3
+  info:
+    title: Employee Management API
+    description: This is a sample API specification for managing employees in a database.
+    version: 1.0.0
+  servers:
+    - url: http://localhost:8080
+  tags:
+    - name: employees
+      description: Operations related to employees
+
+  paths:
+    /api/v1/employees:
+      get:
+        summary: List all employees
+        operationId: getAllEmployees
+        tags:
+          - employees
+        responses:
+          "200":
+            description: Successful operation
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/EmployeeArray"
+
+      post:
+        summary: Create a new employee
+        operationId: createEmployee
+        tags:
+          - employees
+        requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Employee"
+        responses:
+          "201":
+            description: Employee created successfully
+          "400":
+            description: Invalid input
+
+    /api/v1/employees/{id}:
+      get:
+        summary: Get employee by ID
+        operationId: getEmployeeById
+        tags:
+          - employees
+        parameters:
+          - name: id
+            in: path
+            required: true
+            schema:
+              type: integer
+            description: ID of the employee to retrieve
+        responses:
+          "200":
+            description: Successful operation
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Employee"
+          "404":
+            description: Employee not found
+
+      put:
+        summary: Update employee by ID
+        operationId: updateEmployee
+        tags:
+          - employees
+        parameters:
+          - name: id
+            in: path
+            required: true
+            schema:
+              type: integer
+            description: ID of the employee to update
+        requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Employee"
+        responses:
+          "200":
+            description: Employee updated successfully
+          "404":
+            description: Employee not found
+
+      delete:
+        summary: Delete employee by ID
+        operationId: deleteEmployee
+        tags:
+          - employees
+        parameters:
+          - name: id
+            in: path
+            required: true
+            schema:
+              type: integer
+            description: ID of the employee to delete
+        responses:
+          "204":
+            description: Employee deleted successfully
+          "404":
+            description: Employee not found
+
+  components:
+    schemas:
+      Employee:
+        type: object
+        properties:
+          id:
+            type: integer
+            example: 1
+          firstName:
+            type: string
+            example: John
+          lastName:
+            type: string
+            example: Doe
+          emailId:
+            type: string
+            example: john.doe@example.com
+          age:
+            type: integer
+            example: 30
+          phoneNo:
+            type: string
+            example: 0112345678
+
+      EmployeeArray:
+        type: array
+        items:
+          $ref: "#/components/schemas/Employee"
+
+      ErrorResponse:
+        type: object
+        properties:
+          message:
+            type: string
+            example: Employee not found
+          statusCode:
+            type: integer
+            example: 404
