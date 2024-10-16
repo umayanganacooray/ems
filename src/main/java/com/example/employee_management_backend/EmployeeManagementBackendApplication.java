@@ -1,7 +1,6 @@
-package com.example.user_management_backend;
+package com.example.employee_management_backend;
 
-import com.example.user_management_backend.model.Employee;
-import com.example.user_management_backend.repository.EmployeeRepository;
+import com.example.employee_management_backend.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

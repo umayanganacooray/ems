@@ -1,4 +1,4 @@
-package com.example.user_management_backend.model;
+package com.example.employee_management_backend.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
