@@ -1,3 +1,4 @@
+set JAVA_HOME=C:\Program Files\Java\jdk-17.0.12.7-hotspot
 <# : batch portion
 @REM ----------------------------------------------------------------------------
 @REM Licensed to the Apache Software Foundation (ASF) under one
