@@ -10,7 +10,6 @@
       description: Operations related to employees
 
   paths:
-    /:
       get:
         summary: List all employees
         operationId: getAllEmployees
@@ -63,7 +62,7 @@
           "404":
             description: Employee not found
 
-
+    /{id}:
       put:
         summary: Update employee by ID
         operationId: updateEmployee
@@ -86,7 +85,7 @@
             description: Employee updated successfully
           "404":
             description: Employee not found
-
+    /{id}:
       delete:
         summary: Delete employee by ID
         operationId: deleteEmployee
