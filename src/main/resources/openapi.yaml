@@ -4,7 +4,7 @@ info:
   description: This is an API for managing employees in a database.
   version: 1.0.0
 servers:
-  - url: http://localhost:8080/api/v1
+  - url: http://localhost:8080
 tags:
   - name: employees
     description: Operations related to employees
